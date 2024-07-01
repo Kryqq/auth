@@ -1,7 +1,7 @@
 import { SubmitHandler, Path } from 'react-hook-form';
 import './App.css';
 import { UniversalForm } from './components/universalForm/UniversalForm';
-
+import axios from 'axios';
 
 type Rule = {
    required?: string;
@@ -10,7 +10,6 @@ type Rule = {
    minLength?: { value: number; message: string };
 };
 
-// Определение типа поля формы
 export type Field<T> = {
    name: Path<T>;
    label: string;
@@ -21,11 +20,27 @@ type FormData = {
    username: string;
    email: string;
    password: string;
+
+   //???
+   PasswordConfirm: string;
 };
 
 function App() {
-   const onSubmit: SubmitHandler<FormData> = (data) => {
-      console.log(data);
+   const onSubmit: SubmitHandler<FormData> = async (data) => {
+      try {
+         await axios.post('http://localhost:5000/register', data);
+
+         alert('Registration successful');
+      } catch (error) {
+         if (axios.isAxiosError(error)) {
+            console.log(error);
+
+            alert(error.response?.data?.message || 'Registration failed');
+         } else {
+            console.error(error);
+            alert('An unexpected error occurred');
+         }
+      }
    };
 
    const fields: Field<FormData>[] = [
@@ -44,11 +59,20 @@ function App() {
             minLength: { value: 5, message: 'Password is too short' },
          },
       },
+      {
+         name: 'PasswordConfirm',
+         label: 'Confirm the password',
+         rules: {
+            min: 3,
+            required: 'Password is required',
+            minLength: { value: 5, message: 'Password is too short' },
+         },
+      },
    ];
 
    return (
       <div>
-         <h2>Form</h2>
+         <h2>Registration</h2>
          <UniversalForm<FormData> fields={fields} onSubmit={onSubmit} />
       </div>
    );
