@@ -15,14 +15,16 @@ export const UniversalForm = <T extends FieldValues>({ fields, onSubmit }: Unive
       <form onSubmit={handleSubmit(onSubmit)}>
          {fields.map((field) => (
             <div key={String(field.name)}>
-               <label htmlFor={field.name}>{field.label}</label>
+               <div>
+                  <label htmlFor={field.name}>{field.label}</label>
+               </div>
                <Controller
                   name={field.name}
                   control={control}
                   rules={field.rules || {}}
                   render={({ field }) => <input {...field} />}
                />
-               {errors[field.name] && <span>{(errors[field.name]?.message as string) || ''}</span>}
+               {errors[field.name] && <div className='errorMessage'>{(errors[field.name]?.message as string) || ''}</div>}
             </div>
          ))}
          <button type="submit">Submit</button>
