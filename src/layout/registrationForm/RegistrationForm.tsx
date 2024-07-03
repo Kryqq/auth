@@ -5,6 +5,7 @@ import { SubmitHandler } from 'react-hook-form';
 import { UniversalForm } from '../../components/universalForm/UniversalForm';
 
 import { Field, FormData } from '../../types/registrationTypes';
+import { NavLink } from 'react-router-dom';
 
 export const RegistrationForm = () => {
    const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -55,6 +56,7 @@ export const RegistrationForm = () => {
       <div>
          <h2>Registration</h2>
          <UniversalForm<FormData> fields={fields} onSubmit={onSubmit} />
+         <NavLink to={'/login'}>Login</NavLink>
       </div>
    );
 };

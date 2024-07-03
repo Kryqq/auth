@@ -1,13 +1,17 @@
 import React from 'react';
-import { UniversalForm } from '../components/universalForm/UniversalForm';
 
 import { SubmitHandler } from 'react-hook-form';
-
-import { Field, FormData } from '../types/registrationTypes';
+import { Field, FormData } from '../../types/registrationTypes';
+import { UniversalForm } from '../../components/universalForm/UniversalForm';
+import { NavLink, Navigate, useNavigate } from 'react-router-dom';
+import { isAuthenticated } from '../../hooks/isAuthenticated';
 
 export const AuthForm = () => {
+   const navigate = useNavigate();
    const onSubmit: SubmitHandler<FormData> = async (data) => {
-      console.log(data);
+      if (data) {
+         navigate('/test');
+      }
    };
 
    const fields: Field<FormData>[] = [
@@ -29,6 +33,7 @@ export const AuthForm = () => {
    return (
       <div>
          <UniversalForm fields={fields} onSubmit={onSubmit} />
+         <NavLink to={'/'}>register</NavLink>
       </div>
    );
 };
