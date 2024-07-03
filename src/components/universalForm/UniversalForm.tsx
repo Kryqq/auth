@@ -1,5 +1,6 @@
 import { Controller, FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { Field } from '../../App';
+import { Field } from '../../layout/registrationForm/RegistrationForm';
+
 type UniversalFormProps<T extends FieldValues> = {
    fields: Field<T>[];
    onSubmit: SubmitHandler<T>;
