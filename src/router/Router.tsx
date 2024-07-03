@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { RegistrationForm } from '../layout/registrationForm/RegistrationForm';
-import { TestForm } from '../layout/registrationForm/TestForm';
-import { AuthForm } from '../layout/AuthForm';
+import { TestForm } from '../layout/TestForm';
+import { AuthForm } from '../layout/authForm/AuthForm';
+import { ProtectedRoute } from './ProtectedRoute';
 
 export const router = createBrowserRouter([
    {
@@ -9,11 +10,11 @@ export const router = createBrowserRouter([
       element: <RegistrationForm />,
    },
    {
-      path: '/auth',
+      path: '/login',
       element: <AuthForm />,
    },
    {
       path: '/test',
-      element: <TestForm />,
+      element: <ProtectedRoute element={<TestForm />} />,
    },
 ]);
