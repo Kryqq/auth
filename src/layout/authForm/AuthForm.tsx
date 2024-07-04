@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from '../fieldsForm.module.css';
 import { SubmitHandler } from 'react-hook-form';
 import { Field, FormData } from '../../types/registrationTypes';
 import { UniversalForm } from '../../components/universalForm/UniversalForm';
@@ -31,7 +31,8 @@ export const AuthForm = () => {
    ];
 
    return (
-      <div>
+      <div className={styles.fieldsForm}>
+         <h2>Log in</h2>
          <UniversalForm fields={fields} onSubmit={onSubmit} />
          <NavLink to={'/'}>register</NavLink>
       </div>

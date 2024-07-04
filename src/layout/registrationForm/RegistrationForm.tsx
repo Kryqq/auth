@@ -1,3 +1,4 @@
+import styles from '../fieldsForm.module.css';
 import axios from 'axios';
 
 import { SubmitHandler } from 'react-hook-form';
@@ -53,7 +54,7 @@ export const RegistrationForm = () => {
    ];
 
    return (
-      <div>
+      <div className={styles.fieldsForm}>
          <h2>Registration</h2>
          <UniversalForm<FormData> fields={fields} onSubmit={onSubmit} />
          <NavLink to={'/login'}>Login</NavLink>
