@@ -1,4 +1,4 @@
-import styles from '../fieldsForm.module.css';
+ import styles from '../fieldsForm.module.css'
 import axios from 'axios';
 
 import { SubmitHandler } from 'react-hook-form';
