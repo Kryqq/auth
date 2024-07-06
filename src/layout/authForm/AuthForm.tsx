@@ -1,10 +1,8 @@
-import React from 'react';
 import styles from '../fieldsForm.module.css';
 import { SubmitHandler } from 'react-hook-form';
 import { Field, FormData } from '../../types/registrationTypes';
 import { UniversalForm } from '../../components/universalForm/UniversalForm';
-import { NavLink, Navigate, useNavigate } from 'react-router-dom';
-import { isAuthenticated } from '../../hooks/isAuthenticated';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export const AuthForm = () => {
    const navigate = useNavigate();
