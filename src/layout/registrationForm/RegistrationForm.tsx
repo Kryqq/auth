@@ -1,4 +1,5 @@
- import styles from '../fieldsForm.module.css'
+import styles from '../fieldsForm.module.css';
+
 import axios from 'axios';
 
 import { SubmitHandler } from 'react-hook-form';
@@ -7,23 +8,11 @@ import { UniversalForm } from '../../components/universalForm/UniversalForm';
 
 import { Field, FormData } from '../../types/registrationTypes';
 import { NavLink } from 'react-router-dom';
+import { registerUserRequest } from '../../api/requests/requests';
 
 export const RegistrationForm = () => {
-   const onSubmit: SubmitHandler<FormData> = async (data) => {
-      try {
-         await axios.post('http://localhost:5000/register', data);
-
-         alert('Registration successful');
-      } catch (error) {
-         if (axios.isAxiosError(error)) {
-            console.log(error);
-
-            alert(error.response?.data?.message || 'Registration failed');
-         } else {
-            console.error(error);
-            alert('An unexpected error occurred');
-         }
-      }
+   const onSubmit: SubmitHandler<FormData> = (data) => {
+      registerUserRequest(data);
    };
 
    const fields: Field<FormData>[] = [
