@@ -1,20 +1,30 @@
 import { createBrowserRouter } from 'react-router-dom';
+
 import { RegistrationForm } from '../layout/registrationForm/RegistrationForm';
+
 import { TestForm } from '../layout/TestForm';
+
 import { AuthForm } from '../layout/authForm/AuthForm';
+
 import { ProtectedRoute } from './ProtectedRoute';
 
-export const router = createBrowserRouter([
+import { RouteType } from '../types/routesType';
+
+import { ROUTES } from './routes';
+
+const routerConfig: RouteType[] = [
    {
-      path: '/',
+      path: ROUTES.ROOT,
       element: <RegistrationForm />,
    },
    {
-      path: '/login',
+      path: ROUTES.LOGIN,
       element: <AuthForm />,
    },
    {
-      path: '/test',
+      path: ROUTES.TEST,
       element: <ProtectedRoute element={<TestForm />} />,
    },
-]);
+];
+
+export const router = createBrowserRouter(routerConfig);
