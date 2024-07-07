@@ -1,4 +1,5 @@
 import { Controller, FieldValues, Path, PathValue, SubmitHandler, useForm } from 'react-hook-form';
+
 import { Field } from '../../types/registrationTypes';
 
 type UniversalFormProps<T extends FieldValues> = {
@@ -12,6 +13,7 @@ export const UniversalForm = <T extends FieldValues>({ fields, onSubmit }: Unive
       formState: { errors },
    } = useForm<T>();
 
+
    return (
       <form onSubmit={handleSubmit(onSubmit)}>
          {fields.map((field) => (
@@ -23,11 +25,11 @@ export const UniversalForm = <T extends FieldValues>({ fields, onSubmit }: Unive
                   defaultValue={'' as PathValue<T, Path<T>>}
                   name={field.name}
                   control={control}
-                  rules={field.rules || {}}
+                  rules={field.rules ?? {}}
                   render={({ field }) => <input {...field} />}
                />
                {errors[field.name] && (
-                  <div className="errorMessage">{(errors[field.name]?.message as string) || ''}</div>
+                  <div className="errorMessage">{(errors[field.name]?.message as string) ?? ''}</div>
                )}
             </div>
          ))}
