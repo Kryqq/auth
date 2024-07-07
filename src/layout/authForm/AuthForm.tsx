@@ -1,8 +1,14 @@
 import styles from '../fieldsForm.module.css';
+
 import { SubmitHandler } from 'react-hook-form';
-import { Field, FormData } from '../../types/registrationTypes';
-import { UniversalForm } from '../../components/universalForm/UniversalForm';
+
 import { NavLink, useNavigate } from 'react-router-dom';
+
+import { FormData } from '../../types/registrationTypes';
+
+import { UniversalForm } from '../../components/universalForm/UniversalForm';
+
+import { fields } from './authFields';
 
 export const AuthForm = () => {
    const navigate = useNavigate();
@@ -11,22 +17,6 @@ export const AuthForm = () => {
          navigate('/test');
       }
    };
-
-   const fields: Field<FormData>[] = [
-      {
-         name: 'email',
-         label: 'Email',
-         rules: { required: 'Email is required', pattern: { value: /\S+@\S+\.\S+/, message: 'Invalid email address' } },
-      },
-      {
-         name: 'password',
-         label: 'Password',
-         rules: {
-            required: 'Password is required',
-            minLength: { value: 6, message: 'Password must be at least 6 characters' },
-         },
-      },
-   ];
 
    return (
       <div className={styles.fieldsForm}>
