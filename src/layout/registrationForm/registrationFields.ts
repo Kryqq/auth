@@ -1,5 +1,6 @@
-import { Field, FormData } from '../../types/registrationTypes';
+import { Field, FormData } from "../../shared/types/registrationTypes";
 
+ 
 
 export const fields: Field<FormData>[] = [
 	{ name: 'username', label: 'Username', rules: { required: 'Username is required' } },

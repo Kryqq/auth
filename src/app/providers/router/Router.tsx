@@ -1,14 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { RegistrationForm } from '../layout/registrationForm/RegistrationForm';
+import { RegistrationForm } from '../../../layout/registrationForm/RegistrationForm';
 
-import { TestForm } from '../layout/TestForm';
+import { TestForm } from '../../../layout/TestForm';
 
-import { AuthForm } from '../layout/authForm/AuthForm';
+import { AuthForm } from '../../../layout/authForm/AuthForm';
 
 import { ProtectedRoute } from './ProtectedRoute';
 
-import { RouteType } from '../types/routesType';
+import { RouteType } from '../../../types/routesType';
 
 import { ROUTES } from './routes';
 

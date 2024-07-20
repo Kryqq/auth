@@ -6,17 +6,17 @@ import { SubmitHandler } from 'react-hook-form';
 
 import { NavLink, redirect } from 'react-router-dom';
 
-import { UniversalForm } from '../../components/universalForm/UniversalForm';
+import { UniversalForm } from '@components/universalForm/UniversalForm';
 
-import { FormData } from '../../types/registrationTypes';
+import { FormData } from '@appTypes/registrationTypes';
 
-import { registerUserRequest } from '../../api/requests/requests';
+import { registerUserRequest } from '@api/requests/requests';
 
 import { fields } from './registrationFields';
 
 export const RegistrationForm = () => {
    const [useRegister, setUseRegister] = React.useState(false);
-   // надо ли тут писать async?
+
    const onSubmit: SubmitHandler<FormData> = async (data) => {
       await registerUserRequest(data, setUseRegister);
 

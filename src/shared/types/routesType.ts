@@ -1,4 +1,4 @@
-import { ROUTES } from "../router/routes";
+import { ROUTES } from "../../app/providers/router/routes";
 
 export type RouteType = {
 	path: (typeof ROUTES)[keyof typeof ROUTES];

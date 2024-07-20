@@ -1,8 +1,8 @@
 
 import { api } from "../instance";
-import { FormData } from "../../types/registrationTypes";
+import { FormData } from "@appTypes/registrationTypes";
 import axios from "axios";
-import { redirect } from "react-router-dom";
+ 
 import React from "react";
 
 

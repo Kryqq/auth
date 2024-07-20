@@ -4,9 +4,9 @@ import { SubmitHandler } from 'react-hook-form';
 
 import { NavLink, useNavigate } from 'react-router-dom';
 
-import { FormData } from '../../types/registrationTypes';
+import { FormData } from '@appTypes/registrationTypes';
 
-import { UniversalForm } from '../../components/universalForm/UniversalForm';
+import { UniversalForm } from '@components/universalForm/UniversalForm';
 
 import { fields } from './authFields';
 
