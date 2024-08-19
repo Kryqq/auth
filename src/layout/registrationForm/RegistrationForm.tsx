@@ -31,7 +31,9 @@ export const RegistrationForm = () => {
       <div className={styles.fieldsForm}>
          <h2>Registration</h2>
          <UniversalForm<FormData> fields={fields} onSubmit={onSubmit} />
-         <NavLink to={'/login'}>Login</NavLink>
+         <p>
+            Already have an account? <NavLink to={'/login'}>Log in</NavLink>
+         </p>
       </div>
    );
 };
