@@ -11,7 +11,8 @@
          "@api/*": ["src/shared/api/*"],
          "@components/*": ["src/shared/components/*"],
          "@hooks/*": ["src/shared/hooks/*"],
-         "@appTypes/*": ["src/shared/types/*"]
+         "@appTypes/*": ["src/shared/types/*"],
+         "@shared/*": ["src/shared/*"]
       },
 
       /* Bundler mode */
