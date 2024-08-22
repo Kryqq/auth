@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { RegistrationForm } from '../../../layout/registrationForm/RegistrationForm';
+import { RegistrationForm } from '../../../pages/registrationForm/RegistrationForm';
 
-import { TestForm } from '../../../layout/TestForm';
+import { TestForm } from '../../../pages/TestForm';
 
-import { AuthForm } from '../../../layout/authForm/AuthForm';
+import { AuthForm } from '../../../pages/authForm/AuthForm';
 
 import { ProtectedRoute } from './ProtectedRoute';
 
