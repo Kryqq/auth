@@ -1,4 +1,4 @@
-import { Field, FormData } from '../../shared/types/registrationTypes';
+import { Field, FormData } from '../../../../shared/types/registrationTypes';
 
 export const fields: Field<FormData>[] = [
 	{
